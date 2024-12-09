@@ -1,0 +1,12 @@
+<h1><%= @card.name %></h1>
+
+<div class="card-details">
+  <% if @card.photo.attached? %>
+    <%= image_tag @card.photo, alt: @card.name, class: "card-photo-large" %>
+  <% else %>
+    <%= image_tag "placeholder.png", alt: "Image par défaut", class: "card-photo-large" %>
+  <% end %>
+  <p><strong>Description :</strong> <%= @card.description %></p>
+  <p><strong>Type :</strong> <%= @card.category %></p>
+  <p><strong>PV :</strong> <%= @card.pv %></p>
+</div>

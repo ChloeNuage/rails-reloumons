@@ -1,0 +1,16 @@
+<h1>Toutes les cartes</h1>
+
+<% @cards.each do |card| %>
+  <div class="card">
+    <!-- Vérifie si la carte a une photo attachée -->
+    <% if card.photo.attached? %>
+      <%= image_tag card.photo, alt: card.name, class: "card-photo" %>
+    <% else %>
+      <%= image_tag "placeholder.png", alt: "Image par défaut", class: "card-photo" %>
+    <% end %>
+    <h2><%= card.name %></h2>
+    <p><%= card.description %></p>
+    <p>Type : <%= card.category %></p>
+    <p>PV : <%= card.pv %></p>
+  </div>
+<% end %>

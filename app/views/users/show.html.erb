@@ -1,0 +1,12 @@
+<h1>Ma Collection</h1>
+
+<% @cards.each do |card| %>
+  <div class="card">
+    <% if card.photo.attached? %>
+      <%= image_tag card.photo, alt: card.name, class: "card-photo" %>
+    <% end %>
+    <h2><%= card.name %></h2>
+    <p><%= card.description %></p>
+    <%= button_to "Retirer de ma collection", cards_user_path(card_id: card.id), method: :delete %>
+  </div>
+<% end %>
