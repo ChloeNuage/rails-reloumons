@@ -1,14 +1,45 @@
-<h1><%= @card.name %></h1>
-<div class="card-details">
-  <%= image_tag @card.photo if @card.photo.attached? %>
-  <p>Catégorie : <%= @card.category %></p>
-  <p>Description : <%= @card.description %></p>
-  <p>PV : <%= @card.pv %></p>
+<div class="show-card" data-controller="modals">
+  <nav id="navbar">
+    <ul>
+      <li><%= link_to "Cartes", root_path %></li>
+      <li><%= link_to "Collection", collection_user_path(current_user) if user_signed_in? %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Connexion", new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </nav>
 
-  <% if @in_collection %>
-    <%= button_to "Enlever de la collection", remove_from_collection_card_path(@card), method: :delete, data: { turbo: false } %>
-  <% else %>
-    <%= button_to "Ajouter à la collection", add_to_collection_card_path(@card), method: :post, data: { turbo: false } %>
-  <% end %>
+  <div id="logo">
+    <%= image_tag 'logo.png', alt: 'Logo', id: 'logo' %>
+    <h2>Attrapez les tous!</h2>
+  </div>
+
+  <div class="div-show-card">
+    <div class="div-show-card-content">
+      <h1><%= @card.name %></h1>
+      <p><strong>Catégorie : </strong><%= @card.category %></p>
+      <p><strong>Description : </strong><%= @card.description %></p>
+      <p><strong>PV : </strong><%= @card.pv %></p>
+
+      <div style="display: flex; flex-direction: row; justify-content: left; gap: 30px; margin-top: 10%">
+          <% if @in_collection %>
+            <%= button_to "Relâcher", remove_from_collection_card_path(@card), method: :delete, class: "action-button" %>
+          <% else %>
+            <%= button_to "Attraper", add_to_collection_card_path(@card), method: :post, class: "action-button" %>
+          <% end %>
+        <%= link_to "Retour", root_path %>
+      </div>
+    </div>
+
+    <div class="div-show-card-photo">
+      <%= image_tag @card.photo if @card.photo.attached? %>
+    </div>
+  </div>
+
+  <div id="footer">
+    Réalisé par @nuagecreate
+  </div>
+
 </div>
-<%= link_to "Retour à la liste", root_path %>

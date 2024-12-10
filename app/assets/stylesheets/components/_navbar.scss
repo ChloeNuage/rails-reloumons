@@ -1,0 +1,35 @@
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  font-family: "Lilita One", sans-serif;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 10px 30px;
+  color: #386ABB;
+}
+
+#navbar li {
+  display: flex;
+  gap: 40px;
+  flex-direction: row;
+}
+
+
+#navbar ul {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: #386ABB;
+
+  &:hover {
+    color: white;
+  }
+}

@@ -1,22 +1,35 @@
-<nav>
-  <ul>
-    <li><%= link_to "Accueil", root_path %></li>
-    <li><%= link_to "Ma Collection", collection_user_path(current_user) if user_signed_in? %></li>
-    <% if user_signed_in? %>
-      <li><%= link_to "Se Déconnecter", destroy_user_session_path, method: :delete %></li>
-    <% else %>
-      <li><%= link_to "Se Connecter", new_user_session_path %></li>
-    <% end %>
-  </ul>
-</nav>
+<div class="menu-card">
 
-<h1>Reloumons</h1>
+  <nav id="navbar">
+    <ul>
+      <li><%= link_to "Cartes", root_path %></li>
+      <li><%= link_to "Collection", collection_user_path(current_user) if user_signed_in? %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Connexion", new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </nav>
 
-<div class="cards-container">
-  <% @cards.each do |card| %>
-    <div class="card">
+  <div id="logo">
+    <%= image_tag 'logo.png', alt: 'Logo', id: 'logo' %>
+    <h2>Attrapez les tous!</h2>
+  </div>
+
+
+  <div class="image-card">
+    <% @cards.each do |card| %>
+      <div>
+      <%= link_to card_path(card) do %>
       <%= image_tag card.photo if card.photo.attached? %>
-      <h2><%= link_to card.name, card_path(card) %></h2>
-    </div>
-  <% end %>
+      <% end %>
+      </div>
+    <% end %>
+</div>
+
+<div id="footer" style="margin-top:40px">
+  Réalisé par @nuagecreate
+</div>
+
 </div>

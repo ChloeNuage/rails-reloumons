@@ -1,4 +1,5 @@
  # classiques
+Card.destroy_all
 
 rel1 = Card.new(
   name: 'Client chiant',

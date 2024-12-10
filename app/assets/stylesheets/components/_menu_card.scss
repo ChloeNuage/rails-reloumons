@@ -1,0 +1,72 @@
+.menu-card {
+  background-color: #FFCC03;
+  height: 100%;
+  width: 100%;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3%;
+  flex-direction: column;
+}
+#logo img {
+  display: flex;
+  height: 100px;
+  padding-top: 2%;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Crée 5 colonnes égales */
+  gap: 10px; /* Espacement entre les images */
+  justify-items: center; /* Centre les éléments horizontalement */
+  align-items: center; /* Centre les éléments verticalement */
+  padding-top: 4%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.image-card img {
+  width: 100%; /* L'image occupe toute la largeur de la cellule de la grille */
+  height: auto; /* La hauteur s'ajuste pour conserver les proportions */ /* Bordure arrondie, si nécessaire */
+  transition: transform 0.3s ease-in-out;
+
+   &:hover {
+    transform: scale(1.05); /* L'image grandit légèrement au survol */
+  }
+}
+
+
+.menu-card h1 {
+  font-family: "Lilita One", sans-serif;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 80px;
+  color: #386ABB;
+  margin-top: 0;
+  padding-top: 0%;
+  margin-bottom: 4%;
+}
+
+
+.menu-card h2 {
+  font-family: "Lilita One", sans-serif;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  color: white;
+  text-shadow:
+    3px 3px 0 #386ABB,
+    -3px 3px 0 #386ABB,
+    -3px -3px 0 #386ABB,
+    3px -3px 0 #386ABB;
+  margin-top: -30px;
+  padding-top: 0%;
+  margin-bottom: 4%;
+}

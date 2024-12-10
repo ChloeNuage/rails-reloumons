@@ -1,0 +1,126 @@
+.show-card {
+  background-color: #FFCC03;
+  height: 100%;
+  width: 100%;
+}
+
+.show-card h2 {
+  font-family: "Lilita One", sans-serif;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  color: white;
+  text-shadow:
+    3px 3px 0 #386ABB,
+    -3px 3px 0 #386ABB,
+    -3px -3px 0 #386ABB,
+    3px -3px 0 #386ABB;
+  margin-top: -30px;
+  padding-top: 0%;
+  margin-bottom: 4%;
+}
+
+
+.div-show-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 100px;
+  margin: 50px;
+}
+
+.div-show-card img {
+  display: flex;
+  height: 700px;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-show-card h1 {
+  font-family: "Lilita One", sans-serif;
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  color: #386ABB;
+  margin-top: 3%;
+  padding-top: 0%;
+  margin-bottom: 4%;
+}
+
+.div-show-card p {
+  font-family: "Lilita One", sans-serif;
+  text-align: left;
+  font-style: normal;
+  font-weight: 0;
+  font-size: 25px;
+  color: #386ABB;
+}
+
+
+
+
+.div-show-card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.div-show-card-photo{
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+}
+
+
+.div-show-card button {
+  display: flex;
+  gap: 0;
+  font-size: 30px;
+  border-radius: 50px;
+  font-family: "Lilita One", sans-serif;
+  background-color: #386ABB;
+  color: white;
+  padding: 7px 15px;
+  border: none;
+  width: 170px;
+  text-align: center;
+  justify-content: center;
+
+   &:hover {
+    background-color: #214580;
+  }
+}
+
+.div-show-card a {
+  text-decoration: none !important;
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
+  font-size: 30px !important;
+  font-weight: 400;
+  font-size: 25px;
+  padding: 7px 15px;
+  width: 150px;
+  color: #386ABB;
+  background-color: white;
+  border-radius: 50px;
+  text-align: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: #aeaeae;
+  }
+}
+
+
+.div-show-card .flash-notice {
+  font-size: 30px;
+  border-radius: 50px;
+  font-family: "Lilita One", sans-serif;
+  background-color: #386ABB;
+  color: white;
+  padding: 7px 15px;
+  border: none;
+  width: 170px;
+}
