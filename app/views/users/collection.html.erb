@@ -1,0 +1,10 @@
+<h1>Ma Collection</h1>
+<div class="cards-container">
+  <% @cards.each do |card| %>
+    <div class="card">
+      <%= image_tag card.photo if card.photo.attached? %>
+      <h2><%= link_to card.name, card_path(card) %></h2>
+    </div>
+  <% end %>
+</div>
+<%= link_to "Retour à la liste des cartes", root_path %>

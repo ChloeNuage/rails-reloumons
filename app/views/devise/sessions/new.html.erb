@@ -1,0 +1,44 @@
+<%# app/views/devise/sessions/new.html.erb %>
+
+<div class="sign-in">
+<div style="display:flex ; justify-content:center">
+<%= image_tag 'logo.png', alt: 'Logo' %>
+</div>
+<h1>Se connecter</h1>
+
+<div id="sign-in-form">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <% if resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resource.errors.count, "error") %> prohibited this user from signing in:</h2>
+      <ul>
+        <% resource.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
+<div id="sign-in-form" >
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <%= f.submit "Connexion" %>
+
+
+  <% end %>
+</div>
+
+<div id="creer-compte" >
+<%= link_to "Créer un compte", new_user_registration_path %>
+</div>
+
+</div>

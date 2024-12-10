@@ -1,12 +1,14 @@
 <h1><%= @card.name %></h1>
-
 <div class="card-details">
-  <% if @card.photo.attached? %>
-    <%= image_tag @card.photo, alt: @card.name, class: "card-photo-large" %>
+  <%= image_tag @card.photo if @card.photo.attached? %>
+  <p>Catégorie : <%= @card.category %></p>
+  <p>Description : <%= @card.description %></p>
+  <p>PV : <%= @card.pv %></p>
+
+  <% if @in_collection %>
+    <%= button_to "Enlever de la collection", remove_from_collection_card_path(@card), method: :delete, data: { turbo: false } %>
   <% else %>
-    <%= image_tag "placeholder.png", alt: "Image par défaut", class: "card-photo-large" %>
+    <%= button_to "Ajouter à la collection", add_to_collection_card_path(@card), method: :post, data: { turbo: false } %>
   <% end %>
-  <p><strong>Description :</strong> <%= @card.description %></p>
-  <p><strong>Type :</strong> <%= @card.category %></p>
-  <p><strong>PV :</strong> <%= @card.pv %></p>
 </div>
+<%= link_to "Retour à la liste", root_path %>
