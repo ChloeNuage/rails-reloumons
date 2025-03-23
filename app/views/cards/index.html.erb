@@ -22,7 +22,7 @@
     <% @cards.each do |card| %>
       <div>
       <%= link_to card_path(card) do %>
-      <%= image_tag card.photo if card.photo.attached? %>
+        <%= image_tag(card.image_path, alt: card.name) %>
       <% end %>
       </div>
     <% end %>

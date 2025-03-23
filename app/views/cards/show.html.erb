@@ -34,7 +34,7 @@
     </div>
 
     <div class="div-show-card-photo">
-      <%= image_tag @card.photo if @card.photo.attached? %>
+       <%= image_tag(@card.image_path, alt: @card.name) %>
     </div>
   </div>
 
