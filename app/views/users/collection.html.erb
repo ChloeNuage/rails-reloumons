@@ -17,22 +17,16 @@
     <%= image_tag 'logo.png', alt: 'Logo', id: 'logo' %>
     <h2>Attrapez les tous</h2>
   </div>
-
-</div>
-
-<div class="titre-collection">
-  <h1>Ma collection</h1>
-</div>
-<div class="collection-image-card">
-  <% @cards.each do |card| %>
-    <div class="card">
-      <%= link_to card_path(card) do %>
-      <%= image_tag card.photo if card.photo.attached? %>
+    <div class="titre-collection">
+      <h1>Ma collection</h1>
+    </div>
+    <div class="collection-image-card">
+      <% @cards.each do |card| %>
+        <div class="card">
+          <%= link_to card_path(card) do %>
+          <%= image_tag card.photo if card.photo.attached? %>
+          <% end %>
+        </div>
       <% end %>
     </div>
-  <% end %>
-</div>
-
-<div id="footer">
-  Réalisé par @nuagecreate
 </div>

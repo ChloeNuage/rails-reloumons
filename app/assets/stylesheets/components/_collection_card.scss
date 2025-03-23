@@ -1,9 +1,16 @@
-.collection-card {
-  background-color: #FFCC03;
-  height: 600px;
-  width: 100%;
+
+html, body {
+  min-height: 100%;
+  margin: 0;
 }
 
+.collection-card  {
+  background-color: #FFCC03;
+  height: 40%;    /* 100% de la hauteur de la fenêtre parent */
+  width: 100%;     /* 100% de la largeur de la fenêtre */
+}
+
+/* Encart bleu, il prend tout l'espace restant disponible */
 .collection-image-card {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* Crée 5 colonnes égales */
@@ -13,21 +20,24 @@
   padding-top: 4%;
   background-color: #386ABB;
   width: 100%;
+  min-height: 60vh;  /* Prend au moins 60% de la hauteur de la fenêtre */
   padding-bottom: 4%;
+  box-sizing: border-box; /* Inclut le padding dans le calcul de la hauteur */
+  flex-grow: 1;       /* L'élément grandit pour occuper tout l'espace restant */
 }
 
+/* Images à l'intérieur de la grille */
 .collection-image-card img {
   width: 100%; /* L'image occupe toute la largeur de la cellule de la grille */
-  height: auto; /* La hauteur s'ajuste pour conserver les proportions */ /* Bordure arrondie, si nécessaire */
+  height: auto; /* La hauteur s'ajuste pour conserver les proportions */
   transition: transform 0.3s ease-in-out;
   margin-left: 2%;
   margin-right: 2%;
-
-   &:hover {
-    transform: scale(1.05); /* L'image grandit légèrement au survol */
-  }
 }
 
+.collection-image-card img:hover {
+  transform: scale(1.05); /* L'image grandit légèrement au survol */
+}
 
 .titre-collection h1 {
   font-family: "Lilita One", sans-serif;

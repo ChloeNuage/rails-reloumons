@@ -1,7 +1,12 @@
+html, body {
+  min-height: 100%;
+  margin: 0;
+}
+
 .menu-card {
   background-color: #FFCC03;
-  height: 100%;
-  width: 100%;
+  min-height: 100%;    /* 100% de la hauteur de la fenêtre parent */
+  width: 100%;     /* 100% de la largeur de la fenêtre */
 }
 
 #logo {
@@ -11,6 +16,7 @@
   padding-top: 3%;
   flex-direction: column;
 }
+
 #logo img {
   display: flex;
   height: 100px;
@@ -26,6 +32,7 @@
   justify-items: center; /* Centre les éléments horizontalement */
   align-items: center; /* Centre les éléments verticalement */
   padding-top: 4%;
+  padding-bottom: 4%;
   margin-left: 2%;
   margin-right: 2%;
 }

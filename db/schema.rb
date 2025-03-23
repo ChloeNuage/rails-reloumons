@@ -58,12 +58,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_10_204634) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["card_id"], name: "index_cards_users_on_card_id"
+    t.index ["user_id", "card_id"], name: "index_cards_users_on_user_id_and_card_id", unique: true
     t.index ["user_id"], name: "index_cards_users_on_user_id"
-  end
-
-  create_table "lists", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
